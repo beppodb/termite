@@ -15,6 +15,6 @@ docker run --name kibana -d -p 80:80 termite/kibana
 docker run --name kibana4 --link elasticsearch:elasticsearch \
  -d -p 5601:5601 termite/kibana4
 docker run --name logstash --link elasticsearch:elasticsearch \
-  -d -p 1514:1514 -v /ftp_logs:/opt/logs \
+  -d -p 1514:1514 -v /ftp_logs:/opt/logs -v /opt/sincedb:/opt/sincedb \
   termite/logstash -f /etc/ls-ftplogs.conf
 
