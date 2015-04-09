@@ -5,7 +5,7 @@ port: 5601
 host: "0.0.0.0"
 
 # The Elasticsearch instance to use for all your queries.
-elasticsearch: "http://elasticsearch:9200"
+elasticsearch_url: "http://elasticsearch:9200"
 
 # Kibana uses an index in Elasticsearch to store saved searches, visualizations
 # and dashboards. It will create a new index if it doesn't already exist.
@@ -17,7 +17,7 @@ default_app_id: "discover"
 # Time in seconds to wait for responses from the back end or elasticsearch.
 # Note this should always be higher than "shard_timeout".
 # This must be > 0
-request_timeout: 60
+request_timeout: 60000
 
 # Time in milliseconds for Elasticsearch to wait for responses from shards.
 # Note this should always be lower than "request_timeout".
@@ -29,7 +29,7 @@ shard_timeout: 30000
 verify_ssl: true
 
 # Plugins that are included in the build, and no longer found in the plugins/ folder
-bundledPluginIds:
+bundled_plugin_ids:
  - plugins/dashboard/index
  - plugins/discover/index
  - plugins/doc/index
