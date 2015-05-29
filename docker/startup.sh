@@ -13,7 +13,7 @@ docker run --name logstash --link elasticsearch:elasticsearch \
   -d -p 1514:1514 -v /ftp_logs:/opt/logs -v /opt/sincedb:/opt/sincedb \
   termite/logstash -f /etc/ls-ftplogs.conf
 
-for i in {001..030};do echo -n .;sleep 1;done
+for i in {001..240};do echo -n .;sleep 1;done
 echo starting kibana
 
 docker run --name kibana4 --link elasticsearch:elasticsearch \
